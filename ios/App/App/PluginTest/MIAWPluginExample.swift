@@ -31,7 +31,7 @@ public class MIAWPluginExample : CAPPlugin {
     @objc func startConversation(_ call: CAPPluginCall) {
         if #available(iOS 14, *) {
             DispatchQueue.main.async {
-                super.bridge?.viewController?.navigationController?.pushViewController(self.vc, animated: true)
+                super.bridge?.viewController?.present(self.vc, animated:true);
             }
 
         } else {
